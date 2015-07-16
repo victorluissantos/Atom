@@ -17,7 +17,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost/php2/Atom/';
+//$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/Your Ci folder_name';
+$config['base_url'] = 'http://localhost/Atom/';
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ $config['base_url'] = 'http://localhost/php2/Atom/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,7 @@ $config['index_page'] = 'index.php';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
+//$config['uri_protocol']	= 'AUTO';
 $config['uri_protocol']	= 'REQUEST_URI';
 
 /*
