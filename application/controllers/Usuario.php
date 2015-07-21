@@ -11,14 +11,21 @@ class Usuario extends CI_Controller {
 
 	public function index()
 	{
-		$this->data['mensagem'] = "Login de acesso !";
+		try{
 
-		if( isset($_POST) )
-		{
-			var_dump($_POST);
+			$this->data['mensagem'] = "Login de acesso !";
+
+			if( !empty($_POST)  && isset($_POST) )
+			{	
+				$this->verifica_login($_POST);
+			}
+			$this->load->view('login', $this->data);
+		} catch (Exception $e) {
+
+			$this->data['error'] = $e->getMessage().'Código do erro: '.$e->getCode();
+
 		}
 
-		$this->load->view('login', $this->data);
 	}
 
 	public function home()
@@ -26,14 +33,22 @@ class Usuario extends CI_Controller {
 		$this->load->view('login');
 	}
 
-	public function verifica_login()
+	public function verifica_login($data)
 	{
-		$this->load->view('login');
+		try{
+			$this->load->model('usuarios');
+			$usuario = new Usuarios();
+
+			$this->usuarios = $usuario->get_all();
+
+			var_dump($this->usuarios);
+
+			die('chegou');
+		} catch (Exception $e) {
+
+			throw new Exception($e->getMessages(), "#101");
+
+		}
 	}
 
-	public function logar()
-	{
-		var_dump($_POST);
-		die('8743');
-	}
 }

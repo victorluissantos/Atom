@@ -1,9 +1,4 @@
-<title><?php echo $titulo; ?></title>
-<?php
-    echo "<link rel='stylesheet' href='".base_url('assets/bootstrap/css/bootstrap.min.css')."'>";
-    echo "<script src='".base_url('assets/bootstrap/js/bootstrap.min.js')."' type='text/javascript' language='javascript'>";
-?>
-
+<?php require_once(base_url('view/header.php')); ?>
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
