@@ -13,4 +13,10 @@ class Carro extends CI_Controller {
 	{
 		$this->load->view('carro');
 	}
+
+	public function teste()
+	{
+		die('8754678');
+		$this->load->view('carro');
+	}
 }
